@@ -10,44 +10,52 @@
         </form-bean>
     </form-beans>
     <action-mappings>
+        <!-- Forward to Index page  -->
+        <action path="/index"  forward="index"/>
 
         <!--  Display Employees  -->
-        <action path="/getEmployees" type="Controller.EmployeesController" parameter="displayEmployees">
-                <forward name="displayEmployees" path="/Views/displayEmployees.jsp"/>
+        <action path="/getEmployees" type="Controller.EmployeesController" parameter="getEmployees">
+            <forward name="displayEmployees" path="displayEmployees"/>
         </action>
 
         <!--  Display Employees and Their Vehicles  -->
-        <action path="/getEmpWithVeh" type="Controller.EmployeesController" parameter="disEmpWithVeh">
-            <forward name="disEmpWithVeh" path="/Views/disEmpWithVeh.jsp"/>
+        <action path="/getEmpWithVeh" type="Controller.EmployeesController" parameter="getEmpWithVeh">
+            <forward name="disEmpWithVeh" path="disEmpWithVeh"/>
         </action>
 
         <!--  Forward to Registration page  -->
-        <action path="/register"  forward="/register.jsp"/>
-
-        <!-- Forward to Index page  -->
-        <action path="/index"  forward="/index.jsp"/>
+        <action path="/register"  forward="register"/>
 
         <!--  Add new Employee  -->
         <action path="/addEmployee" name="RegForm" input="/register.jsp" type="Controller.EmployeesController" parameter="addEmployee">
-            <forward name="success" path="/register.jsp"/>
-            <forward name="failed" path="/register.jsp"/>
+            <forward name="success" path="register"/>
+            <forward name="failed" path="register"/>
         </action>
+
+        <!-- Forward to getEmpId page  -->
+        <action path="/getEmpId" forward="getEmpId"/>
 
         <!--  Fetch an Employee details  -->
         <action path="/getEmpDetails" name="GetEmpDetailForm" input="index.jsp" type="Controller.EmployeesController" parameter="getEmployee">
-            <forward name="error" path="/index.jsp"/>
-            <forward name="displayDetails" path="/Views/displayEmployee.jsp"/>
-            <forward name="userNotFound" path="/index.jsp"/>
+            <forward name="error" path="getEmpId"/>
+            <forward name="displayDetails" path="displayEmployee"/>
+            <forward name="userNotFound" path="getEmpId"/>
         </action>
     </action-mappings>
+    <!-- Tiles Controller -->
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
 
     <!--  Validation Message Resources  -->
     <message-resources parameter="Messages"/>
 
     <!-- Validation plugin  -->
     <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
-        <set-property property="pathnames"
-                      value="/WEB-INF/validator-rules.xml,
-                             /WEB-INF/validation.xml"/>
+        <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+
+    <!-- Tiles Plugin -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-definition.xml" />
+        <set-property property="moduleAware" value="true" />
     </plug-in>
 </struts-config>

@@ -6,17 +6,9 @@ import org.apache.struts.validator.ValidatorForm;
 import javax.servlet.http.HttpServletRequest;
 
 public class RegistrationForm extends ValidatorForm {
-    private int id,age,salary;
+    private int age,salary;
     private long mobile;
-    private String  name,department;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private String  empName,department;
 
     public int getAge() {
         return age;
@@ -42,12 +34,12 @@ public class RegistrationForm extends ValidatorForm {
         this.mobile = mobile;
     }
 
-    public String getName() {
-        return name;
+    public String getEmpName() {
+        return empName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setEmpName(String empName) {
+        this.empName = empName;
     }
 
     public String getDepartment() {
@@ -59,7 +51,7 @@ public class RegistrationForm extends ValidatorForm {
     }
     @Override
     public void reset(ActionMapping mapping, HttpServletRequest request) {
-        name="";
+        empName="";
         department="";
         salary=0;
         age=0;

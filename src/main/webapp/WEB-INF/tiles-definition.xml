@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/tiles-config_1_3.dtd">
+
+<tiles-definitions>
+    <!--  index  -->
+    <definition name="index" path="/tilesTemplate.jsp">
+        <put name="menu" value="/Views/menu.jsp"/>
+    </definition>
+
+    <!--  Display Employees  -->
+    <definition name="displayEmployees" extends="index">
+        <put name="bodyTop" value="/Views/displayEmployees.jsp"/>
+    </definition>
+
+    <!--  Display Employees and Their Vehicles  -->
+    <definition name="disEmpWithVeh" extends="index">
+        <put name="bodyTop" value="/Views/disEmpWithVeh.jsp"/>
+    </definition>
+
+    <!--  Add new Employee  -->
+    <definition name="register" extends="index">
+        <put name="bodyTop" value="/Views/register.jsp"/>
+    </definition>
+
+    <!-- Get Employee ID -->
+    <definition name="getEmpId" extends="index">
+        <put name="bodyTop" value="/Views/getEmpId.jsp"/>
+    </definition>
+
+    <!--  Fetch an Employee details  -->
+    <definition name="displayEmployee" extends="getEmpId">
+        <put name="bodyBottom" value="/Views/displayEmployee.jsp"/>
+    </definition>
+</tiles-definitions>

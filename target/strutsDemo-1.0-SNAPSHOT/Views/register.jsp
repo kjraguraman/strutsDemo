@@ -3,12 +3,12 @@
 <html>
 <head>
     <title>Registration</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+<%--    <link href="../css/bootstrap.min.css" rel="stylesheet">--%>
 </head>
 <body>
-<h1 style="color: green;text-align: center">${success}</h1>
-<h1 style="color: green;text-align: center">${failed}</h1>
-    <div class="container my-5">
+<h1 class="text-success text-center">${success}</h1>
+<h1 class="text-danger text-center">${failed}</h1>
+    <div class="container">
             <div class="col-lg-6 mx-auto">
                 <div class="card">
                     <div class="card-header bg-primary text-white">
@@ -19,8 +19,8 @@
                             <html:javascript formName="RegForm"/>
                             <div class="form-group mb-2">
                                 Name<span class="text-danger">*</span>
-                                <html:text styleClass="form-control" property="name"/>
-                                <span class="text-danger"><html:errors property="name"/></span>
+                                <html:text styleClass="form-control" property="empName"/>
+                                <span class="text-danger"><html:errors property="empName"/></span>
                             </div>
                             <div class="form-group mb-2">
                                 Department<span class="text-danger">*</span>
@@ -54,9 +54,9 @@
                             </div>
                         </html:form>
                     </div>
-                    <div class="card-footer text-center">
-                        <html:link action="index">Back</html:link>
-                    </div>
+<%--                    <div class="card-footer text-center">--%>
+<%--                        <html:link action="index">Back</html:link>--%>
+<%--                    </div>--%>
                 </div>
             </div>
     </div>

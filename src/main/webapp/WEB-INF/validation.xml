@@ -4,7 +4,7 @@
 <form-validation>
     <formset>
         <form name="RegForm">
-            <field property="name" depends="required,mask">
+            <field property="empName" depends="required,mask">
                 <arg key="Name" name="required" resource="false"/>
                 <arg key="Name" name="mask" resource="false"/>
                 <var>

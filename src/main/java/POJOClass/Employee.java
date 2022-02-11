@@ -1,16 +1,16 @@
 package POJOClass;
 
 public class Employee {
-    private int id,age,salary;
+    private int empId,age,salary;
     private long mobile;
-    private String  name,department;
+    private String  empName,department,vehicleName,vehicleRegNo;
 
-    public int getId() {
-        return id;
+    public int getEmpId() {
+        return empId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setEmpId(int empId) {
+        this.empId = empId;
     }
 
     public int getAge() {
@@ -37,12 +37,12 @@ public class Employee {
         this.mobile = mobile;
     }
 
-    public String getName() {
-        return name;
+    public String getEmpName() {
+        return empName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setEmpName(String empName) {
+        this.empName = empName;
     }
 
     public String getDepartment() {
@@ -51,5 +51,21 @@ public class Employee {
 
     public void setDepartment(String department) {
         this.department = department;
+    }
+
+    public String getVehicleName() {
+        return vehicleName;
+    }
+
+    public void setVehicleName(String vehicleName) {
+        this.vehicleName = vehicleName;
+    }
+
+    public String getVehicleRegNo() {
+        return vehicleRegNo;
+    }
+
+    public void setVehicleRegNo(String vehicleRegNo) {
+        this.vehicleRegNo = vehicleRegNo;
     }
 }
