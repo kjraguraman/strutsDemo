@@ -7,29 +7,33 @@
 </head>
 <body>
 <div class="container">
-    <div class="col-lg-8 mx-auto">
-        <div class="table-responsive">
-            <table class="table table-bordered table-hover text-center">
-                <thead class="bg-primary text-white">
-                    <th>Emp Id</th>
-                    <th>Emp Name</th>
-                    <th>Vehicle Name</th>
-                    <th>Vehicle Reg.No</th>
-                </thead>
-                <tbody>
-                    <logic:iterate name="employeesList" id="employee">
-                        <tr>
-                            <td>${employee.getEmpId()}</td>
-                            <td>${employee.getEmpName()}</td>
-                            <td>${employee.getVehicleName()}</td>
-                            <td>${employee.getVehicleRegNo()}</td>
-                        </tr>
-                    </logic:iterate>
-                </tbody>
-<%--            <tfoot>--%>
-<%--                <td colspan="4" class="bg-light"><html:link action="index">Back</html:link></td>--%>
-<%--            </tfoot>--%>
-            </table>
+    <div class="row" style="height: 70%">
+        <div class="col-lg-8 mx-auto">
+            <div class="table-responsive">
+                <div style="max-height:100%;overflow:scroll;">
+                    <table class="table table-bordered table-hover text-center">
+                        <thead class="bg-primary text-white" style="position:sticky;top:0;inset-block-end:0;">
+                            <th>Emp Id</th>
+                            <th>Emp Name</th>
+                            <th>Vehicle Name</th>
+                            <th>Vehicle Reg.No</th>
+                        </thead>
+                        <tbody>
+                        <logic:iterate name="employeesList" id="employee">
+                            <tr>
+                                <td>${employee.getEmpId()}</td>
+                                <td>${employee.getEmpName()}</td>
+                                <td>${employee.getVehicleName()}</td>
+                                <td>${employee.getVehicleRegNo()}</td>
+                            </tr>
+                        </logic:iterate>
+                        </tbody>
+                        <%--            <tfoot>--%>
+                        <%--                <td colspan="4" class="bg-light"><html:link action="index">Back</html:link></td>--%>
+                        <%--            </tfoot>--%>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>

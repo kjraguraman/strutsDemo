@@ -7,33 +7,37 @@
 </head>
 <body>
 <div class="container">
-    <div class="col-lg-8 mx-auto">
-        <div class="table-responsive">
-            <table class="table table-bordered table-hover text-center">
-                 <thead class="bg-primary text-white">
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Department</th>
-                    <th>Salary</th>
-                    <th>Age</th>
-                    <th>Mobile</th>
-                </thead>
-                <tbody>
-                    <logic:iterate name="employeesList" id="employee">
-                    <tr>
-                        <td>${employee.getEmpId()}</td>
-                        <td>${employee.getEmpName()}</td>
-                        <td>${employee.getDepartment()}</td>
-                        <td>${employee.getSalary()}</td>
-                        <td>${employee.getAge()}</td>
-                        <td>${employee.getMobile()}</td>
-                    </tr>
-                    </logic:iterate>
-                </tbody>
-<%--                <tfoot>--%>
-<%--                    <td class="bg-light" colspan="6"><html:link action="index">Back</html:link></td>--%>
-<%--                </tfoot>--%>
-            </table>
+    <div class="row" style="height: 50%">
+        <div class="col-lg-8 mx-auto">
+            <div class="table-responsive">
+                <div style="max-height:100%;overflow:scroll;">
+                    <table class="table table-bordered table-hover text-center">
+                        <thead class="bg-primary text-white" style="position:sticky;top:0;inset-block-end:0;">
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Salary</th>
+                        <th>Age</th>
+                        <th>Mobile</th>
+                        </thead>
+                        <tbody>
+                        <logic:iterate name="employeesList" id="employee">
+                            <tr>
+                                <td>${employee.getEmpId()}</td>
+                                <td>${employee.getEmpName()}</td>
+                                <td>${employee.getDepartment()}</td>
+                                <td>${employee.getSalary()}</td>
+                                <td>${employee.getAge()}</td>
+                                <td>${employee.getMobile()}</td>
+                            </tr>
+                        </logic:iterate>
+                        </tbody>
+                        <%--                <tfoot>--%>
+                        <%--                    <td class="bg-light" colspan="6"><html:link action="index">Back</html:link></td>--%>
+                        <%--                </tfoot>--%>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>

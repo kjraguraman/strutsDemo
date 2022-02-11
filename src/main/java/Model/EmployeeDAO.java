@@ -8,7 +8,7 @@ public class EmployeeDAO {
     // Fetch all Employees
     public List<Employee> getEmployees(){
         List<Employee> employees=new ArrayList<>();
-        String query="select * from employees";
+        String query="select * from employees order by Id";
         Connection con=DBConnect.getConnection();
         try {
             Statement stmt = con.createStatement();
