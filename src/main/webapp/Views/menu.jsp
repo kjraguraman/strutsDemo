@@ -6,7 +6,8 @@
     <html:link action="getEmployees">Display Employees</html:link><br><br>
     <html:link action="getEmpWithVeh" >Display Employees and Their Vehicles</html:link><br><br>
     <html:link action="register">Add new Employee</html:link><br><br>
-    <html:link action="getEmpId">Fetch an Employee details</html:link>
+    <html:link action="getEmpId">Fetch an Employee details</html:link><br><br>
+    <html:link action="addVehicleForm">Add Vehicle</html:link>
 </div>
 </body>
 </html>

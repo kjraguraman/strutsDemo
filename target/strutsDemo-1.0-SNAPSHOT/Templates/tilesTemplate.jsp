@@ -9,7 +9,9 @@
 <body>
 <div class="container">
     <div class="row">
-        <tiles:insert attribute="head" ignore="true"/>
+        <div class="col-sm text-center">
+           <h1><tiles:getAsString name="header" ignore="true"/></h1>
+        </div>
     </div>
     <div class="row mt-5">
         <div class="col-sm-3 text-center">
@@ -17,15 +19,20 @@
         </div>
         <div class="col-sm-9">
             <div class="row">
-                <tiles:insert attribute="bodyTop" ignore="true"/>
+                <div class="col-sm text-center">
+                    <h1><tiles:getAsString name="messageBodyTop" ignore="true"/></h1>
+                    <tiles:insert attribute="bodyTop" ignore="true"/>
+                </div>
             </div>
             <div class="row mt-5">
-                <tiles:insert attribute="bodyBottom" ignore="true"/>
+                <div>
+                    <tiles:insert attribute="bodyBottom" ignore="true"/>
+                </div>
             </div>
         </div>
     </div>
     <div class="row">
-        <tiles:insert attribute="foot" ignore="true"/>
+        <tiles:insert attribute="footer" ignore="true"/>
     </div>
 </div>
 </body>

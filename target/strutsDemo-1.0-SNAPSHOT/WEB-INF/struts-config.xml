@@ -8,6 +8,7 @@
         <form-bean name="GetEmpDetailForm" type="org.apache.struts.action.DynaActionForm">
             <form-property name="id" type="java.lang.Integer"/>
         </form-bean>
+        <form-bean name="AddVehicleForm" type="Bean.AddVehicleForm"/>
     </form-beans>
     <action-mappings>
         <!-- Forward to Index page  -->
@@ -16,18 +17,20 @@
         <!--  Display Employees  -->
         <action path="/getEmployees" type="Controller.EmployeesController" parameter="getEmployees">
             <forward name="displayEmployees" path="displayEmployees"/>
+            <forward name="emptyRecord" path="emptyRecord"/>
         </action>
 
         <!--  Display Employees and Their Vehicles  -->
         <action path="/getEmpWithVeh" type="Controller.EmployeesController" parameter="getEmpWithVeh">
             <forward name="disEmpWithVeh" path="disEmpWithVeh"/>
+            <forward name="emptyRecord" path="emptyRecord"/>
         </action>
 
         <!--  Forward to Registration page  -->
         <action path="/register"  forward="register"/>
 
         <!--  Add new Employee  -->
-        <action path="/addEmployee" name="RegForm" input="/register.jsp" type="Controller.EmployeesController" parameter="addEmployee">
+        <action path="/addEmployee" name="RegForm" input="/Views/register.jsp" type="Controller.EmployeesController" parameter="addEmployee">
             <forward name="success" path="register"/>
             <forward name="failed" path="register"/>
         </action>
@@ -36,10 +39,19 @@
         <action path="/getEmpId" forward="getEmpId"/>
 
         <!--  Fetch an Employee details  -->
-        <action path="/getEmpDetails" name="GetEmpDetailForm" input="index.jsp" type="Controller.EmployeesController" parameter="getEmployee">
+        <action path="/getEmpDetails" name="GetEmpDetailForm" type="Controller.EmployeesController" parameter="getEmployee">
             <forward name="error" path="getEmpId"/>
             <forward name="displayDetails" path="displayEmployee"/>
             <forward name="userNotFound" path="getEmpId"/>
+        </action>
+
+        <!-- Forward to add Vehicle Form -->
+        <action path="/addVehicleForm" forward="addVehicleForm"/>
+
+        <!-- Add Vehicle -->
+        <action path="/addVehicle" name="AddVehicleForm" input="/Views/addVehicleForm.jsp" type="Controller.EmployeesController" parameter="addVehicle">
+            <forward name="success" path="addVehicleForm"/>
+            <forward name="empIdNotFound" path="addVehicleForm"/>
         </action>
     </action-mappings>
     <!-- Tiles Controller -->

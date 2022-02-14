@@ -1,5 +1,6 @@
 package Model;
 
+import Bean.AddVehicleForm;
 import Bean.RegistrationForm;
 import POJOClass.Employee;
 import java.sql.*;
@@ -116,5 +117,23 @@ public class EmployeeDAO {
             con.close();
         } catch (SQLException e) {}
         return emp;
+    }
+
+    public void addVehicle(int empId, AddVehicleForm vehicle){
+        String query="insert into empVehicles(vehicleRegNo,vehicleCompName,empId) values(?,?,?)";
+        Connection con=DBConnect.getConnection();
+        try{
+            PreparedStatement stmt= con.prepareStatement(query);
+            stmt.setString(1,vehicle.getRegNo());
+            stmt.setString(2,vehicle.getCompanyName());
+            stmt.setInt(3,empId);
+            stmt.executeUpdate();
+        }catch (Exception e){
+            e.printStackTrace();
+            System.out.println("Error while adding vehicle to employee");
+        }
+        try {
+            con.close();
+        } catch (SQLException e) {}
     }
 }

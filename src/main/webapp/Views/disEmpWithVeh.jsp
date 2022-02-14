@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container">
-    <div class="row" style="height: 70%">
+    <div class="row">
         <div class="col-lg-8 mx-auto">
             <div class="table-responsive">
                 <div style="max-height:100%;overflow:scroll;">

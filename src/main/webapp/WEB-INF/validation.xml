@@ -50,4 +50,17 @@
             </field>
         </form>
     </formset>
+    <formset>
+        <form name="AddVehicleForm">
+            <field property="regNo" depends="required">
+                <arg key="Registration No" resource="false"/>
+            </field>
+            <field property="companyName" depends="required">
+                <arg key="Comapany Name" resource="false"/>
+            </field>
+            <field property="empId" depends="required">
+                <arg key="Employee Id" resource="false"/>
+            </field>
+        </form>
+    </formset>
 </form-validation>

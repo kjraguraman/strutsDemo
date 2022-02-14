@@ -7,6 +7,7 @@
     <!--  index  -->
     <definition name="index" path="/Templates/tilesTemplate.jsp">
         <put name="menu" value="/Views/menu.jsp"/>
+        <put name="header" value="Struts 1.x"/>
     </definition>
 
     <!--  Display Employees  -->
@@ -32,5 +33,15 @@
     <!--  Fetch an Employee details  -->
     <definition name="displayEmployee" extends="getEmpId">
         <put name="bodyBottom" value="/Views/displayEmployee.jsp"/>
+    </definition>
+
+    <!-- Empty Record -->
+    <definition name="emptyRecord" extends="index">
+        <put name="messageBodyTop" value="0 Records"/>
+    </definition>
+
+    <!--Add Vehicle Form -->
+    <definition name="addVehicleForm" extends="index">
+        <put name="bodyTop" value="/Views/addVehicleForm.jsp"/>
     </definition>
 </tiles-definitions>
